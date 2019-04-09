@@ -1,0 +1,69 @@
+
+  <div class="container"><div class="jumbotron"> <h2 align="center">Add Products here... </h2> 
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+      
+      <label for="text">ID : </label>
+      
+      <input type="text" class="form-control"  formControlName="firstName"
+      id="firstName" />
+      
+      <div *ngIf="submitted && addForm.controls.firstName.errors" class="error">       
+      <div class="text-danger" *ngIf="addForm.controls.username.errors.required">
+      
+      ID is required ..
+      
+      </div>
+      
+      </div>
+      <label for="lastName"> Name : </label>
+      <input type="text" class="form-control" formControlName="lastName"
+      id="lastName" />
+      
+      <div *ngIf="submitted && addForm.controls.lastName.errors" class="error">
+      
+      <div class="text-danger" *ngIf="addForm.controls.lastName.errors.required">
+      
+      Name is required ..
+      
+      </div>
+      
+      </div>
+      <label for="email"> Description : </label>
+      <input type="text" class="form-control" formControlName="email"
+      id="email" />
+      
+      <div *ngIf="submitted && addForm.controls.email.errors" class="error">
+      
+      <div class="text-danger" *ngIf="addForm.controls.email.errors.required">
+      
+      Description is required ..
+      
+      </div>
+      
+      </div>
+
+      <label for="price"> Price : </label>
+      <input type="text" class="form-control" formControlName="price"
+      id="price" />
+      
+      <div *ngIf="submitted && addForm.controls.price.errors" class="error">
+      
+      <div class="text-danger" *ngIf="addForm.controls.price.errors.required">
+      
+      Price is required ..
+      
+      </div>
+      
+      </div>
+      
+      </div>
+      
+      <button class="btn btn-success">Add</button> &nbsp;&nbsp;&nbsp;
+      
+      <button class="btn btn-danger" type="reset">Reset</button>&nbsp;&nbsp;&nbsp;
+      <button class="btn btn-warning"[routerLink]="['/list-user']" >Go to List</button> 
+      </form>
+    </div>
+    </div>
